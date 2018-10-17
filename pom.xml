@@ -5,15 +5,60 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mobtail</groupId>
-    <artifactId>ubanh-info-share</artifactId>
+    <artifactId>ubanh-status-share</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>ubanh-info-share-service</module>
-        <module>ubanh-info-share-client</module>
-        <module>ubanh-info-share-api</module>
+        <module>ubanh-status-share-service</module>
+        <module>ubanh-status-share-client</module>
+        <module>ubanh-status-share-api</module>
     </modules>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
+    </properties>
+
+    <dependencyManagement>
+
+        <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <type>pom</type>
+                <version>2.0.6.RELEASE</version>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

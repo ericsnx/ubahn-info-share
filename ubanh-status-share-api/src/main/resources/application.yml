@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: local
+server:
+  contextPath: /ubanh-status-share
+  port: 8080
