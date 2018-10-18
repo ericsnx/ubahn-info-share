@@ -1,0 +1,4 @@
+com/mobtail/entity/Incident.class
+com/mobtail/repository/IncidentRepository.class
+com/mobtail/service/IncidentService.class
+com/mobtail/entity/Incident$IncidentBuilder.class

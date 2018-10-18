@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mobtail</groupId>
-    <artifactId>ubanh-status-share</artifactId>
+    <artifactId>ubanh-info-share</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>ubanh-status-share-service</module>
-        <module>ubanh-status-share-client</module>
-        <module>ubanh-status-share-api</module>
+        <module>ubanh-info-share-service</module>
+        <module>ubanh-info-share-client</module>
+        <module>ubanh-info-share-rest</module>
     </modules>
 
     <properties>
@@ -20,6 +20,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
+        <lombok.version>1.18.2</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -45,11 +46,20 @@
     </dependencyManagement>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
