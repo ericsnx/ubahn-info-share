@@ -6,7 +6,7 @@ import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -23,8 +23,8 @@ public class IncidentService {
         incidentRepository.save(incident);
     }
 
-    public Set<Incident> findAll() {
-        return (Set<Incident>) incidentRepository.findAll();
+    public List<Incident> findAll() {
+        return (List<Incident>) incidentRepository.findAll();
     }
 
     public Incident findById(@NonNull final UUID id) {
