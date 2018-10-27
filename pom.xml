@@ -13,6 +13,7 @@
         <module>ubanh-info-share-service</module>
         <module>ubanh-info-share-client</module>
         <module>ubanh-info-share-rest</module>
+        <module>ubanh-info-share-common</module>
     </modules>
 
     <properties>
@@ -28,6 +29,7 @@
 
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
     </properties>
 
     <dependencyManagement>
@@ -60,6 +62,13 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation-api.version}</version>
+        </dependency>
+
 
         <!-- Testing dependencies -->
         <dependency>

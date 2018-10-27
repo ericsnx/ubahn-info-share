@@ -1,6 +1,7 @@
 package com.mobtail.controller;
 
 import com.mobtail.UbanhInfoShareApplicationTest;
+import com.mobtail.request.IncidentRequest;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -32,6 +33,23 @@ public class IncidentControllerIntegrationTest {
                 .then()
                 .assertThat()
                 .statusCode(200);
+    }
+
+    @Test
+    @DisplayName("Save new incident test")
+    public void saveIncidentsWithSuccess() {
+
+        final IncidentRequest incidentRequest = IncidentRequest.builder().user("Eric").line("U6").build();
+        System.out.println(incidentRequest);
+
+        given().standaloneSetup(incidentController)
+                .body(incidentRequest)
+                .contentType(ContentType.JSON)
+                .when()
+                .post("/ubanh-status-share/incidents")
+                .then()
+                .assertThat()
+                .statusCode(201);
     }
 
 }
