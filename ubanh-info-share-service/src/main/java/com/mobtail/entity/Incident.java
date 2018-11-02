@@ -27,8 +27,8 @@ public class Incident {
     @Column(name = "line")
     private String line;
 
-    @Column(name = "created_at")
-    private Instant createdAt;
+    @Column(name = "reported_at")
+    private Instant reportedAt;
 
     @Column(name = "user_name")
     private String user;

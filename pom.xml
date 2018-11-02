@@ -31,6 +31,7 @@
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
         <assertj-core.version>3.11.1</assertj-core.version>
+        <json-path.version>2.3.0</json-path.version>
     </properties>
 
     <dependencyManagement>
@@ -122,6 +123,13 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>${assertj-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>${json-path.version}</version>
             <scope>test</scope>
         </dependency>
 
