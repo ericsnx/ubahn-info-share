@@ -45,7 +45,7 @@ public class IncidentService {
                 .id(uuid)
                 .line(line)
                 .user(user)
-                .createdAt(Instant.now()).build();
+                .reportedAt(Instant.now()).build();
     }
 
     public List<IncidentResponse> findAll() {
@@ -57,7 +57,7 @@ public class IncidentService {
     }
 
     private IncidentResponse mapIncidentResponse(@NotNull final Incident incident) {
-        return IncidentResponse.builder().id(incident.getId()).line(incident.getLine()).user(incident.getUser()).reportedAt(incident.getCreatedAt()).build();
+        return IncidentResponse.builder().id(incident.getId()).line(incident.getLine()).user(incident.getUser()).reportedAt(incident.getReportedAt()).build();
     }
 
 }
