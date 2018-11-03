@@ -4,7 +4,7 @@ CREATE TABLE incidents (
 	line VARCHAR(10) NOT NULL,
     user_name VARCHAR(250) NOT NULL,
     removed boolean NOT NULL,
-    created_at timestamptz,
-    updated_at timestamptz
+    reported_at timestamp,
+    updated_at timestamp
 
 );

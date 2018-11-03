@@ -45,6 +45,7 @@ public class IncidentService {
                 .id(uuid)
                 .line(line)
                 .user(user)
+                .removed(Boolean.TRUE)
                 .reportedAt(Instant.now()).build();
     }
 

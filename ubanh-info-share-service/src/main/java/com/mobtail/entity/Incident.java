@@ -10,6 +10,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.Instant;
 import java.util.UUID;
 
@@ -18,6 +19,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "incidents")
 public class Incident {
 
     @Id
@@ -27,9 +29,15 @@ public class Incident {
     @Column(name = "line")
     private String line;
 
+    @Column(name = "user_name")
+    private String user;
+
     @Column(name = "reported_at")
     private Instant reportedAt;
 
-    @Column(name = "user_name")
-    private String user;
+    @Column(name = "updated_at")
+    private Instant updatedAt;
+
+    @Column(name = "removed")
+    private Boolean removed;
 }

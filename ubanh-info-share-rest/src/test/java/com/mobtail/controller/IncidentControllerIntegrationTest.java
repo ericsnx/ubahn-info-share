@@ -1,13 +1,11 @@
 package com.mobtail.controller;
 
 import com.mobtail.UbanhInfoShareApplicationTest;
-import com.mobtail.entity.Incident;
 import com.mobtail.request.CreateIncidentRequest;
 import com.mobtail.request.UpdateIncidentRequest;
 import com.mobtail.response.IncidentResponse;
 import io.restassured.http.ContentType;
 import io.restassured.module.mockmvc.response.MockMvcResponse;
-import io.restassured.response.ResponseBody;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
