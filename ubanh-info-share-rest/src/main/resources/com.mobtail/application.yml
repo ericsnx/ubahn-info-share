@@ -1,13 +1,12 @@
 spring:
-  profiles:
-    active: local
+#  profiles:
+#    active: local
 server:
   contextPath: /ubanh-status-share
   port: 8080
 ---
 spring:
-  profiles:
-    active: local
+  profiles: local
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
@@ -27,14 +26,11 @@ spring:
 ---
 spring:
   profiles: test
-  flyway:
-    enabled: true
   datasource:
     url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_DELAY=- 1;DB_CLOSE_ON_EXIT=FALSE
     driverClassName: org.h2.Driver
     username: postgres
     password: postgres
-    initialize: true
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
@@ -45,3 +41,6 @@ spring:
   url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_DELAY=- 1;DB_CLOSE_ON_EXIT=FALSE
   username: postgres
   password: postgres
+  flyway:
+    enabled: false
+    locations: classpath:ubanh-info-share-db-schema/db/migration

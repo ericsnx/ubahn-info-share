@@ -21,9 +21,9 @@ import java.util.UUID;
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ActiveProfiles("test")
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = UbanhInfoShareApplicationTest.class)
-@ActiveProfiles("test")
 @Transactional
 public class IncidentControllerIntegrationTest {
 

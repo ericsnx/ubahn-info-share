@@ -1,7 +1,7 @@
 --CREATE USER mobtail WITH password 'mobtail';
-
+--
 --CREATE SCHEMA mobtail;
-
+--
 --GRANT USAGE ON SCHEMA mobtail TO mobtail;
 --ALTER USER mobtail SET search_path = 'public';
 --
