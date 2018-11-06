@@ -4,13 +4,11 @@ COPY . /tmp/
 
 WORKDIR /tmp/
 
-RUN mvn clean package -Pdocker
+RUN mvn clean package -Pproduction
 
 WORKDIR ubanh-info-share-rest/target
 
 COPY service-start.sh .
-
-RUN ls -la
 
 RUN chmod +x service-start.sh
 
