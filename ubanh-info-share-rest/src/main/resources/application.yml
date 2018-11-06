@@ -1,6 +1,8 @@
 spring:
   profiles:
     active: @spring.profiles.active@
+  flyway:
+    enabled: true
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
@@ -15,8 +17,6 @@ server:
 ---
 spring:
   profiles: local
-  flyway:
-    enabled: true
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
@@ -27,8 +27,6 @@ spring:
 ---
 spring:
   profiles: docker
-  flyway:
-    enabled: true
   datasource:
     url: jdbc:postgresql://172.18.0.2:5432/postgres
     username: postgres
@@ -38,16 +36,20 @@ spring:
     validationQuery: SELECT 1
 ---
 spring:
+  profiles: production
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+---
+spring:
   profiles: test
-  flyway:
-    enabled: true
   datasource:
     url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_DELAY=- 1;DB_CLOSE_ON_EXIT=FALSE
-    driverClassName: org.h2.Driver
     username: postgres
     password: postgres
-  driver: org.h2.Driver
+    driverClassName: org.h2.Driver
   classpath: ./lib/h2-1.4.192.jar
-  url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_DELAY=- 1;DB_CLOSE_ON_EXIT=FALSE
-  username: postgres
-  password: postgres
