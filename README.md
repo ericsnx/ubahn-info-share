@@ -1,8 +1,5 @@
 # ubahn-info-share
 
-With the support of the users I want to help people to get current incident of the berlin ubanh lines
-very often people find out maybe a bit too late that some ubanh lines are not working.
+With the support of the users I want to help people to get current incidents current incidents on the Ubahn lines, by incident I mean, malfunction, delay, unexpected out of service.
 
-Spin up postgres data on docker with:
-
-docker run --name postgres --restart always -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+Very often I see people(including me) finding out a bit too late that a Ubahn line is not working.

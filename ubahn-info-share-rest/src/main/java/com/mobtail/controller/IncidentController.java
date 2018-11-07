@@ -1,6 +1,5 @@
 package com.mobtail.controller;
 
-import com.mobtail.entity.Incident;
 import com.mobtail.request.CreateIncidentRequest;
 import com.mobtail.request.UpdateIncidentRequest;
 import com.mobtail.response.IncidentResponse;

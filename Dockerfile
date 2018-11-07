@@ -4,7 +4,7 @@ COPY . /tmp/
 
 WORKDIR /tmp/
 
-RUN mvn clean package -Pproduction
+RUN mvn clean package -Pproduction -DskipTests
 
 WORKDIR ubahn-info-share-rest/target
 

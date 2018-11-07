@@ -38,6 +38,18 @@ jobs:
         - ~/.m2
         key: v1-dependencies-{{ checksum "pom.xml" }}
 
-    # run tests!
+    # run tests
     - run: mvn integration-test
+
+    - setup_remote_docker:
+        docker_layer_caching: true # enabling image caching
+
+    # build and push Docker image
+    - run: |
+        TAG=0.1.$CIRCLE_BUILD_NUM
+        docker build -t ubahn-info-share-service .
+        docker tag ubahn-info-share-service mobtail/ubahn-info-share-service:$TAG
+        docker login -u mobtail -p "$DOCKER_PASS"
+        docker push mobtail/ubahn-info-share-service
+
 
