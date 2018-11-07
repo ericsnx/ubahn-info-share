@@ -5,16 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mobtail</groupId>
-    <artifactId>ubanh-info-share</artifactId>
+    <artifactId>ubahn-info-share</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>ubanh-info-share-service</module>
-        <module>ubanh-info-share-client</module>
-        <module>ubanh-info-share-rest</module>
-        <module>ubanh-info-share-common</module>
-        <module>ubanh-info-share-db-schema</module>
+        <module>ubahn-info-share-service</module>
+        <module>ubahn-info-share-client</module>
+        <module>ubahn-info-share-rest</module>
+        <module>ubahn-info-share-common</module>
+        <module>ubahn-info-share-db-schema</module>
     </modules>
 
     <properties>

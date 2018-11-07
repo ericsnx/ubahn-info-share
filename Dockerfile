@@ -6,7 +6,7 @@ WORKDIR /tmp/
 
 RUN mvn clean package -Pproduction
 
-WORKDIR ubanh-info-share-rest/target
+WORKDIR ubahn-info-share-rest/target
 
 COPY service-start.sh .
 

@@ -12,7 +12,7 @@ spring:
       jdbc:
         lob.non_contextual_creation: true
 server:
-  contextPath: /ubanh-status-share
+  contextPath: /ubahn-status-share
   port: 8080
 ---
 spring:
