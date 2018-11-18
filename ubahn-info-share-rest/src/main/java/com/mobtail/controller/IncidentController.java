@@ -21,7 +21,7 @@ import java.util.UUID;
 @RestController("incidents")
 public class IncidentController {
 
-    private IncidentService incidentService;
+    private final IncidentService incidentService;
 
     @Autowired
     public IncidentController(@NonNull final IncidentService incidentService) {

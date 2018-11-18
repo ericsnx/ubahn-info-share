@@ -12,7 +12,11 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -20,11 +24,16 @@ import java.util.stream.StreamSupport;
 @Service
 public class IncidentService {
 
-    private IncidentRepository incidentRepository;
+    private final DateTimeFormatter dateTimeFormatter;
+    private final IncidentRepository incidentRepository;
 
     @Autowired
     public IncidentService(final IncidentRepository incidentRepository) {
         this.incidentRepository = incidentRepository;
+        this.dateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
+                .withLocale(Locale.GERMANY)
+                .withZone(ZoneId.systemDefault());
+
     }
 
     public Incident save(@NonNull final CreateIncidentRequest incidentRequest) {
@@ -58,7 +67,12 @@ public class IncidentService {
     }
 
     private IncidentResponse mapIncidentResponse(@NotNull final Incident incident) {
-        return IncidentResponse.builder().id(incident.getId()).line(incident.getLine()).user(incident.getUser()).reportedAt(incident.getReportedAt()).build();
+        return IncidentResponse.builder()
+                .id(incident.getId())
+                .line(incident.getLine())
+                .user(incident.getUser())
+                .reportedAt(dateTimeFormatter.format(incident.getReportedAt()))
+                .build();
     }
 
 }

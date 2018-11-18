@@ -19,5 +19,5 @@ public class IncidentResponse {
     private UUID id;
     private String line;
     private String user;
-    private Instant reportedAt;
+    private String reportedAt;
 }
