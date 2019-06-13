@@ -1,5 +1,6 @@
 package com.mobtail.service;
 
+import com.mobtail.DateUtil;
 import com.mobtail.entity.Incident;
 import com.mobtail.exception.UbanhShareInfoException;
 import com.mobtail.repository.IncidentRepository;
@@ -15,6 +16,7 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
@@ -26,10 +28,13 @@ public class IncidentService {
 
     private final DateTimeFormatter dateTimeFormatter;
     private final IncidentRepository incidentRepository;
+    private final DateUtil dateUtil;
 
     @Autowired
-    public IncidentService(final IncidentRepository incidentRepository) {
+    public IncidentService(final IncidentRepository incidentRepository,
+                           final DateUtil dateUtil) {
         this.incidentRepository = incidentRepository;
+        this.dateUtil = dateUtil;
         this.dateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
                 .withLocale(Locale.GERMANY)
                 .withZone(ZoneId.systemDefault());
@@ -37,7 +42,7 @@ public class IncidentService {
     }
 
     public Incident save(@NonNull final CreateIncidentRequest incidentRequest) {
-
+        System.out.println(dateUtil.instantNow());
         final Incident incident = buildIncidentEntity(UUID.randomUUID(), incidentRequest.getLine(), incidentRequest.getUser());
         return incidentRepository.save(incident);
     }
