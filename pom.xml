@@ -23,7 +23,7 @@
         <java.version>11</java.version>
         <postgresql.version>42.2.5</postgresql.version>
         <lombok.version>1.18.2</lombok.version>
-        <h2database.version>1.4.197</h2database.version>
+        <h2database.version>2.0.206</h2database.version>
         <restassured.version>3.0.1</restassured.version>
         <spring-mock-mvc.version>3.0.1</spring-mock-mvc.version>
         <junit.version>5.3.1</junit.version>
