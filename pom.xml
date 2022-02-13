@@ -21,7 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
-        <postgresql.version>42.2.5</postgresql.version>
+        <postgresql.version>42.2.25</postgresql.version>
         <lombok.version>1.18.2</lombok.version>
         <h2database.version>2.1.210</h2database.version>
         <restassured.version>3.0.1</restassured.version>
